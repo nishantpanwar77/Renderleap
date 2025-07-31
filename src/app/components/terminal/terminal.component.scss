@@ -1,0 +1,79 @@
+.terminal-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #0d1117;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+.terminal-tabs {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.terminal-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  color: #f0f6fc;
+  font-size: 13px;
+}
+
+.terminal-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3fb950;
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #3fb950;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.terminal-btn {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 4px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 12px;
+  &:hover {
+    background: #30363d;
+  }
+}
+
+.terminal-content {
+  flex: 1;
+  overflow: hidden;
+  // padding: 12px;
+}
+
+:host ::ng-deep .xterm {
+  height: 100%;
+}

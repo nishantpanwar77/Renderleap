@@ -1,0 +1,38 @@
+@if (isOpen()) {
+<div
+  class="backdrop"
+  [class.active]="isOpen()"
+  [@backdropAnimation]="isOpen() ? 'visible' : 'hidden'"
+  (click)="onBackdropClick()"
+  [attr.aria-hidden]="!isOpen()"
+  role="button"
+  tabindex="-1"
+></div>
+}
+
+<aside
+  class="sidemenu"
+  [class.open]="isOpen()"
+  [@slideAnimation]="isOpen() ? 'open' : 'closed'"
+  role="dialog"
+  [attr.aria-modal]="isOpen()"
+  [attr.aria-labelledby]="'settings-title'"
+  [attr.aria-hidden]="!isOpen()"
+  (keydown)="onKeyDown($event)"
+>
+  <div class="p-3">
+    <p>Select background</p>
+
+    <div class="row g-3">
+      @for (bg of mainbBackgrounds; track $index) {
+      <div class="col-12 col-sm-6">
+        <div
+          class="background-wrapper"
+          [class]="bg.bgClass"
+          (click)="setBg(bg)"
+        ></div>
+      </div>
+      }
+    </div>
+  </div>
+</aside>

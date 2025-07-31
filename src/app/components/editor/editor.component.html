@@ -1,0 +1,9 @@
+<div class="editor-container">
+  @if(currentFile){
+  <div class="editor-header">
+    <span class="file-path">{{ currentFile.path }}</span>
+    <span class="file-status">{{ isSaving ? "Saving..." : "Saved" }}</span>
+  </div>
+  }
+  <div #editorElement class="editor-content"></div>
+</div>

@@ -1,0 +1,30 @@
+// Color Palette
+$primary: #f8f9fa;
+$secondary: #6c757d;
+$accent: #007bff;
+$background: #ffffff;
+$border-color: #dee2e6;
+$text-color: #212529;
+$text-muted: #6c757d;
+
+// Layout
+$navbar-height: 60px;
+$sidebar-min-width: 20%;
+$content-min-width: 40%;
+
+// Spacing
+$base-padding: 1rem;
+$base-margin: 1rem;
+
+// Typography
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+// Transitions
+$transition-base: 0.3s ease;
+
+// Shadows
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);

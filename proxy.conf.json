@@ -1,0 +1,10 @@
+{
+  "/": {
+    "target": "http://localhost:4200",
+    "secure": false,
+    "headers": {
+      "Cross-Origin-Embedder-Policy": "require-corp",
+      "Cross-Origin-Opener-Policy": "same-origin"
+    }
+  }
+}

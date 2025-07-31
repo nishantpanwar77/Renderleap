@@ -1,0 +1,56 @@
+.editor-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: #252526;
+  border-bottom: 1px solid #3e3e42;
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.file-path {
+  color: #cccccc;
+}
+
+.file-status {
+  color: #888;
+  font-style: italic;
+}
+
+.editor-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+:host ::ng-deep .cm-editor {
+  height: 100%;
+}
+
+:host ::ng-deep .cm-scroller {
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+:host ::ng-deep .cm-gutters {
+  background-color: #1e1e1e;
+  color: #858585;
+  border-right: 1px solid #3e3e42;
+}
+
+:host ::ng-deep .cm-activeLineGutter {
+  background-color: #2a2a2a;
+}
+
+:host ::ng-deep .cm-lineNumbers {
+  min-width: 40px;
+}

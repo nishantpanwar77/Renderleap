@@ -1,0 +1,245 @@
+:host {
+  --bg-primary: #486db7;
+  // --bg-primary: #1a1d23;
+  --bg-tertiary: #2a2f38;
+  --border-color: #3a3f4b;
+  --text-primary: #e4e7ed;
+  --text-secondary: #a2a9b9;
+  --accent-primary: #00d4ff;
+  --accent-success: #4caf50;
+  --accent-warning: #ff9800;
+  --accent-danger: #f44336;
+  --tab-active: #1e2228;
+  --hover-bg: #2e3340;
+}
+
+.ide-container {
+  // background-image: url("../../../../public/tx-bg.png");
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary);
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", monospace;
+  overflow: hidden;
+}
+
+.ide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 48px;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 100;
+}
+
+.logo {
+  width: 130px;
+  img {
+    width: 100%;
+  }
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.ide-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel-left {
+  min-width: 200px;
+  max-width: 600px;
+  border-right: 1px solid var(--border-color);
+}
+
+.panel-center {
+  min-width: 400px;
+}
+
+.panel-right {
+  min-width: 300px;
+  max-width: 800px;
+  border-left: 1px solid var(--border-color);
+}
+
+.panel-bottom {
+  min-height: 150px;
+  max-height: 600px;
+  border-top: 1px solid var(--border-color);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.panel-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+}
+
+.panel-content {
+  flex: 1;
+  overflow: auto;
+}
+
+.resizer {
+  background: var(--border-color);
+  transition: background 0.2s ease;
+  z-index: 10;
+  user-select: none;
+  &:hover {
+    box-shadow: 0px 0px 0px 2px #3e3e3e;
+    background: #777777;
+  }
+
+  &.vertical {
+    width: 1px;
+    cursor: col-resize;
+  }
+  &.horizontal {
+    height: 1px;
+    cursor: row-resize;
+    width: 100%;
+  }
+}
+
+.tabs-container {
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.tabs-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-right: 1px solid var(--border-color);
+  cursor: pointer;
+  min-width: 120px;
+  max-width: 200px;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background: var(--hover-bg);
+}
+
+.tab.active {
+  background: var(--tab-active);
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+.tab-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.tab-close {
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.tab:hover .tab-close,
+.tab.active .tab-close {
+  opacity: 1;
+}
+
+.tab-close:hover {
+  background: var(--hover-bg);
+  color: var(--text-primary);
+}
+
+.editor-container {
+  flex: 1;
+  // display: flex;
+  overflow: auto;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 40px;
+}
+
+.empty-icon {
+  width: 100px;
+  img {
+    width: 70px;
+    filter: grayscale(100%);
+    opacity: 0.3;
+  }
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.preview-content {
+  height: 100%;
+}
+
+.preview-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.terminal-wrapper {
+  height: 100%;
+  // display: flex;
+}
+
+.btn-icon {
+  font-size: 16px;
+}

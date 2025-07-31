@@ -1,0 +1,22 @@
+<div class="terminal-container">
+  <div class="terminal-header">
+    <div class="terminal-tabs">
+      <div class="terminal-tab active">
+        <span class="tab-icon">💻</span>
+        <span>Terminal</span>
+      </div>
+      @if (isServerRunning) {
+      <div class="terminal-status">
+        <span class="status-dot"></span>
+        <span>Server Running</span>
+      </div>
+      }
+    </div>
+    <div class="terminal-actions">
+      <button (click)="clearTerminal()" class="terminal-btn" title="Clear">
+        Clear
+      </button>
+    </div>
+  </div>
+  <div #terminalElement class="terminal-content"></div>
+</div>

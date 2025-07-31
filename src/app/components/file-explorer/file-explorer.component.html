@@ -1,0 +1,62 @@
+<div class="file-explorer">
+  <div class="file-tree">
+    @for (node of fileTree; track $index) {
+    <ng-container
+      *ngTemplateOutlet="fileNodeTemplate; context: { node: node, level: 0 }"
+    ></ng-container>
+    }
+  </div>
+</div>
+
+<ng-template #fileNodeTemplate let-node="node" let-level="level">
+  <div
+    class="file-node"
+    [class.file]="node.type === 'file'"
+    [class.folder]="node.type === 'folder'"
+    [style.paddingLeft.px]="level * 20 + 12"
+    (click)="onNodeClick(node)"
+  >
+    @if (node.type === 'folder') {
+    <span class="node-icon">
+      @if (isExpanded(node.path)) {
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#FFFFFF"
+      >
+        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+      </svg>
+      }@else {
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#FFFFFF"
+      >
+        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+      </svg>
+      }
+    </span>
+    }
+
+    <span class="node-icon" [innerHTML]="getNodeIcon(node)"></span>
+
+    <span class="node-name">{{ node.name }}</span>
+  </div>
+
+  @if (node.type === 'folder' && isExpanded(node.path)) { @for (child of
+  node.children; track $index) {
+  <div class="folder-children">
+    <ng-container
+      *ngTemplateOutlet="
+        fileNodeTemplate;
+        context: { node: child, level: level + 1 }
+      "
+    >
+    </ng-container>
+  </div>
+  } }
+</ng-template>
