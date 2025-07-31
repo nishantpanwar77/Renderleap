@@ -1,4 +1,6 @@
-# Angular WebContainer IDE
+![Renderleap Logo](https://raw.githubusercontent.com/nishantpanwar77/Renderleap/refs/heads/main/public/rlogo.png)
+
+# Renderleap
 
 A modern web-based IDE built with Angular 19, featuring WebContainer for browser-based Node.js execution, CodeMirror for code editing, and xterm.js for terminal emulation.
 
